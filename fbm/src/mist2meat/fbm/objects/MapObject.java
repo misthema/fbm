@@ -1,10 +1,5 @@
 package mist2meat.fbm.objects;
 
-import java.util.Random;
-
-import org.newdawn.slick.Color;
-
-import mist2meat.mkglib.Graphics;
 import mist2meat.mkglib.graphics.Image;
 
 public abstract class MapObject extends BaseObject{
@@ -18,11 +13,6 @@ public abstract class MapObject extends BaseObject{
 	}
 	public MapObject(){
 		
-	}
-	
-	public void update() {
-		//x++;
-		rotateObject(sprite.getRotation() + 1);
 	}
 
 	@Override

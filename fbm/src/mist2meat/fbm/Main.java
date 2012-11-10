@@ -1,8 +1,8 @@
 package mist2meat.fbm;
 
 import java.lang.reflect.Field;
-import java.util.Random;
 
+import mist2meat.fbm.game.Game;
 import mist2meat.fbm.objects.ObjectContainer;
 import mist2meat.mkglib.Screen;
 import mist2meat.mkglib.io.Input;
@@ -14,7 +14,7 @@ public class Main {
 
 	public static Screen	screen;
 	public boolean			run;
-	public ObjectContainer	cont	= new ObjectContainer();
+	public static Game		game;
 
 	public static void main( String[] args ) {
 		setPaths();
@@ -46,17 +46,16 @@ public class Main {
 
 	public void init() throws Exception {
 		screen = new Screen( 800, 600, "Homoruudutin", false );
+		game = new Game();
 		run = true;
-
-		Random rand = new Random();
-		//cont.addObject(new MapObject(new Image("res/lol.png",6, 1000),50, 50));
 	}
 
 	public void loop() {
 		while ( run ) {
 			wannaQuit();
-			cont.update();
-			cont.draw();
+			
+			game.process();
+			
 			screen.update();
 		}
 	}
