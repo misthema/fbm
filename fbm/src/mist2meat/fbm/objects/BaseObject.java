@@ -1,4 +1,4 @@
-package mist2mean.fbm.objects;
+package mist2meat.fbm.objects;
 
 public abstract class BaseObject implements BaseObjectInterface{
 	

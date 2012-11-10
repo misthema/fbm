@@ -1,4 +1,4 @@
-package mist2mean.fbm.objects;
+package mist2meat.fbm.objects;
 
 public interface BaseObjectInterface {
 	public void update();

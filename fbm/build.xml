@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="fbm" default="Compile" basedir=".">
+	<description>Do all the painful work for me</description>
+	
+	<target name="Compile" description="Do the work">
+		<!-- build jar -->
+		<jar jarfile="fbm.jar" basedir="bin">
+			<manifest>
+				<!-- All the important stuff needs to be in lib/ -->
+				<attribute name="Class-Path" value="lib/lwjgl.jar lib/lwjgl_util.jar lib/slick.jar lib/mkg-lib.jar"/>
+				<!-- Main Class to Run Program -->
+				<attribute name="Main-Class" value="mist2meat.fbm.Main"/>
+			</manifest>
+		</jar>
+		
+		<!-- Create folders required -->
+		<mkdir dir="BUILD"/>
+		<mkdir dir="BUILD/lib"/>
+		
+		<!-- Move the created jarfile -->
+		<move file="fbm.jar" todir="BUILD" failonerror="false" overwrite="true"/>
+		
+		<!-- Move over required libraries -->
+		<copy todir="BUILD/lib">
+			<fileset dir="lib"/>
+		</copy>
+		
+		<!-- Move over resources -->
+		<copy todir="build/res">
+			<fileset dir="res"/>
+		</copy>
+		
+		<!-- Make run.bat -->
+		<!-- <echo file="BUILD/run.bat" append="false">java -cp fbm.jar -Djava.library.path="lib/natives" mist2meat.fbm.Main</echo> -->
+		<echo file="BUILD/run.bat" append="false">java -jar fbm.jar</echo>
+		<echo file="BUILD/run.bat" append="true">${line.separator}</echo>
+		<echo file="BUILD/run.bat" append="true">pause</echo>
+	</target>
+</project>
