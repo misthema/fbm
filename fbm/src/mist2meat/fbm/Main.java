@@ -23,7 +23,7 @@ public class Main {
 		
 		try {
 			new Main();
-		} catch (LWJGLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -41,21 +41,17 @@ public class Main {
 		}
 	}
 	
-	public Main() throws LWJGLException {
+	public Main() throws Exception {
 		init();
 		loop();
 	}
 	
-	public void init() throws LWJGLException {
-		screen = new Screen(800,600,"Homoruutudin");
+	public void init() throws Exception {
+		screen = new Screen(800,600,"Homoruutudin", false);
 		run = true;
 		
 		Random rand = new Random();
-		cont.addObject(new MapObject(new Image("res/lol.png",6, 1000),50, 50));
-
-		for(BaseObject obj : cont.getObjectsByClass(new MapObject())){
-
-		}
+		//cont.addObject(new MapObject(new Image("res/lol.png",6, 1000),50, 50));
 	}
 	
 	public void loop(){

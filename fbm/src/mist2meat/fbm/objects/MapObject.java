@@ -7,7 +7,7 @@ import org.newdawn.slick.Color;
 import mist2meat.mkglib.Graphics;
 import mist2meat.mkglib.graphics.Image;
 
-public class MapObject extends BaseObject{
+public abstract class MapObject extends BaseObject{
 
 	protected Image sprite;
 	
@@ -28,13 +28,6 @@ public class MapObject extends BaseObject{
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void draw() {
-		Graphics.setColor(Color.yellow);
-		Graphics.drawImage(sprite, x, y, true);
 		
 	}
 	public Image getSprite(){
