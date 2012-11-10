@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+
+=======
+# Folders #
+
+
+# Files #
+*.class
+
+# Package Files #
+*.war
+*.ear
+>>>>>>> branch 'master' of git@github.com:kokolihapihvi/mkg-lib.git
