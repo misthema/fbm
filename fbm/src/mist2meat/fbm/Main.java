@@ -3,7 +3,6 @@ package mist2meat.fbm;
 import java.lang.reflect.Field;
 
 import mist2meat.fbm.game.Game;
-import mist2meat.fbm.objects.ObjectContainer;
 import mist2meat.mkglib.Screen;
 import mist2meat.mkglib.io.Input;
 import mist2meat.mkglib.io.Keys;
